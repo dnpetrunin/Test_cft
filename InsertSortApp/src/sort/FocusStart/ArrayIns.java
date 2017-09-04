@@ -10,11 +10,11 @@ class ArrayIns <T> {
 
     String getData() //геттер
     {
-        String data = "";
-        for (int j = 0; j < array.length; j++) {
-            data += array[j] + "\r\n";
+        StringBuilder data = new StringBuilder();
+        for (T anArray : array) {
+            data.append(anArray).append("\r\n");
         }
-        return data;
+        return data.toString();
     }
 
     void insertionSort(String typeFlag, String sortFlag) { //сортировка
@@ -22,27 +22,27 @@ class ArrayIns <T> {
         for (out = 1; out < array.length; out++) {
             T temp = array[out];
             in = out;
-            if (typeFlag.equals(InsertSortApp.sortingStrings)) { //сортировка для строк
-                if (sortFlag.equals(InsertSortApp.ascendingSort)) { //по возрастанию
+            if (typeFlag.equals(WorkingWithFiles.sortingStrings)) { //сортировка для строк
+                if (sortFlag.equals(WorkingWithFiles.ascendingSort)) { //по возрастанию
                     while (in > 0 && array[in - 1].toString().compareTo(temp.toString()) >= 0) {
                         array[in] = array[in - 1];
                         --in;
                     }
-                } else if (sortFlag.equals(InsertSortApp.descendingSort)) { //по убыванию
+                } else if (sortFlag.equals(WorkingWithFiles.descendingSort)) { //по убыванию
                     while (in > 0 && array[in - 1].toString().compareTo(temp.toString()) <= 0) {
                         array[in] = array[in - 1];
                         --in;
                     }
                 }
 
-                } else if (typeFlag.equals(InsertSortApp.sortingIntegers)) { //сортировка для чисел
+                } else if (typeFlag.equals(WorkingWithFiles.sortingIntegers)) { //сортировка для чисел
                 try {
-                    if (sortFlag.equals(InsertSortApp.ascendingSort)) { //по возрастанию
+                    if (sortFlag.equals(WorkingWithFiles.ascendingSort)) { //по возрастанию
                         while (in > 0 && (Integer) array[in - 1] >= (Integer) temp) {
                             array[in] = array[in - 1];
                             --in;
                         }
-                    } else if (sortFlag.equals(InsertSortApp.descendingSort)) { //по убыванию
+                    } else if (sortFlag.equals(WorkingWithFiles.descendingSort)) { //по убыванию
                         while (in > 0 && (Integer) array[in - 1] <= (Integer) temp) {
                             array[in] = array[in - 1];
                             --in;

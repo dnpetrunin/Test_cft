@@ -9,14 +9,18 @@ import java.nio.file.Paths;
 import java.util.List;
 
 class WorkingWithFiles {
+    final static String sortingIntegers = "-i";
+    final static String sortingStrings = "-s";
+    final static String ascendingSort = "-a";
+    final static String descendingSort= "-d";
     ArrayIns<?> readFile(String fileName, String typeName) throws IOException { //считывание из файла
         ArrayIns<?> arrayIns = null;
         try {
             try {
                 List<String> stringList = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
-                if (typeName.equals(InsertSortApp.sortingStrings)) { //считывание строк
+                if (typeName.equals(sortingStrings)) { //считывание строк
                     arrayIns = new ArrayIns<>(stringList.toArray());
-                } else if (typeName.equals(InsertSortApp.sortingIntegers)) { //считывание чисел
+                } else if (typeName.equals(sortingIntegers)) { //считывание чисел
                     try {
                         Integer[] data = new Integer[stringList.size()];
                         for (int x = 0; x < stringList.size(); x++) {

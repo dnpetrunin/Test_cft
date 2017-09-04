@@ -15,10 +15,7 @@ public class InsertSortApp {
         textInFile.insertionSort(typeFlag, sortFlag);
         WorkingWithFiles.write(fileOutputName, textInFile.getData());
     }
-    final static String sortingIntegers = "-i";
-    final static String sortingStrings = "-s";
-    final static String ascendingSort = "-a";
-    final static String descendingSort= "-d";
+
     private static  void argsTest(String[] args) { //проверка количества аргументов
         if (args.length != 4) {
             System.out.println("Неверное количество передаваемых аргументов");
@@ -26,11 +23,11 @@ public class InsertSortApp {
         }
     }
     private static void test(String args3, String args4) { //проверка аргументов
-        if (!args3.equals(InsertSortApp.sortingIntegers) && !args3.equals(InsertSortApp.sortingStrings)) {
+        if (!args3.equals(WorkingWithFiles.sortingIntegers) && !args3.equals(WorkingWithFiles.sortingStrings)) {
             System.out.println("Некорректный флаг для типов данных");
             System.exit(0);
         }
-        if (!args4.equals(InsertSortApp.ascendingSort) && !args4.equals(InsertSortApp.descendingSort)) {
+        if (!args4.equals(WorkingWithFiles.ascendingSort) && !args4.equals(WorkingWithFiles.descendingSort)) {
             System.out.println("Некорректный флаг для сортировки");
             System.exit(0);
         }
