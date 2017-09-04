@@ -4,9 +4,9 @@ package sort.FocusStart;
 class ArrayIns <T> {
     private T[] array;
 
-    ArrayIns(T[] _array) {
+    ArrayIns(T[] _array) { //конструктор
         this.array = _array;
-    } //конструктор
+    }
 
     String getData() //геттер
     {
